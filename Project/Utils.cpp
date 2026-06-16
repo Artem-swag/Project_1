@@ -8,9 +8,14 @@
 
 void waitForEnter() {
     using namespace std;
-    cout << "\nНажмите Enter для продолжения...";
+    if (cin.fail()) {
+        cin.clear();
+    }
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cin.get();
+    cout << "\nНажмите Enter для продолжения...";
+    char ch;
+    while (cin.get(ch) && ch != '\n') {
+    }
 }
 
 
